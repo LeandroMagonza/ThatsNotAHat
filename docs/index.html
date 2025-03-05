@@ -23,7 +23,35 @@
         flex: 1;
       }
     </style>
-  <link rel="shortcut icon" href="./favicon.ico" /></head>
+    <link id="favicon-link" rel="shortcut icon" href="./favicon.ico" />
+    
+    <!-- Script para ajustar rutas en GitHub Pages -->
+    <script>
+      (function() {
+        // Detectar si estamos en GitHub Pages
+        const isGitHubPages = window.location.hostname.includes('github.io');
+        const repoName = 'ThatsNotAHat'; // El nombre de tu repositorio
+        
+        if (isGitHubPages) {
+          // Ajustar el favicon
+          document.getElementById('favicon-link').href = '/' + repoName + '/favicon.ico';
+          
+          // Crear el script con la ruta correcta
+          const jsPath = '/' + repoName + '/_expo/static/js/web/index-1d327d8a4080e2a9a45e5fe72fe851f3.js';
+          const scriptTag = document.createElement('script');
+          scriptTag.src = jsPath;
+          scriptTag.defer = true;
+          document.body.appendChild(scriptTag);
+        } else {
+          // En modo local, usar rutas relativas
+          const scriptTag = document.createElement('script');
+          scriptTag.src = './_expo/static/js/web/index-1d327d8a4080e2a9a45e5fe72fe851f3.js';
+          scriptTag.defer = true;
+          document.body.appendChild(scriptTag);
+        }
+      })();
+    </script>
+  </head>
 
   <body>
     <!-- Use static rendering with Expo Router to support running without JavaScript. -->
@@ -32,6 +60,6 @@
     </noscript>
     <!-- The root element for your Expo app. -->
     <div id="root"></div>
-  <script src="./_expo/static/js/web/index-1d327d8a4080e2a9a45e5fe72fe851f3.js" defer></script>
-</body>
+    <!-- Script se agrega dinámicamente según donde esté alojado el sitio -->
+  </body>
 </html>
