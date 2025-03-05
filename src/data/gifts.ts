@@ -1,0 +1,22 @@
+export const gifts = [
+  'Hat',
+  'Book',
+  'Guitar',
+  'Piano',
+  'Muffin',
+  'Broccoli',
+  'Watch',
+  'Necklace',
+  'Scarf',
+  'Teapot',
+  'Candle',
+  'Headphones',
+  'Sunglasses',
+  'Perfume',
+  'Chocolate',
+  'Flowers',
+  'Teddy Bear',
+  'Soccer Ball',
+  'Lamp',
+  'Coffee Mug'
+]; 
